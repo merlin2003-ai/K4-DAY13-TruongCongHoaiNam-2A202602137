@@ -1,0 +1,30 @@
+{
+  "training_only": true,
+  "warning": "TRAINING ONLY: not ground truth, not for CVAT import or quality claims.",
+  "source_prediction": "boxes-demo-delta-1.73-voxel-0.16.json",
+  "source_prediction_sha256": "2ffb4e85d1a8746b1f290f6704204bf57e5521ae3df98ea81473a087a066fcfc",
+  "frame_id": "demo",
+  "source_frame": "pcd-source",
+  "model_dataset": "KITTI",
+  "delta_m": 1.73,
+  "z_ground_m": 0.07500000000000001,
+  "height_offset_m": 1.805,
+  "box_count": 13,
+  "cases": {
+    "correct": {
+      "json": "case-correct.json",
+      "plot": "side-correct.png",
+      "description": "Unmodified source-frame prediction copy; model output, not an accuracy reference."
+    },
+    "batch-z": {
+      "json": "case-batch-z.json",
+      "plot": "side-batch-z.png",
+      "description": "Every box z is shifted down by delta + z_ground, simulating a missed inverse conversion."
+    },
+    "one-box-z": {
+      "json": "case-one-box-z.json",
+      "plot": "side-one-box-z.png",
+      "description": "Only the first box z is shifted down by delta + z_ground, simulating an object-local error."
+    }
+  }
+}
